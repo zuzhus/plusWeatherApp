@@ -1,5 +1,5 @@
 .container {
-  padding: 85px 0 85px 0;
+  padding: 85px 0 10px 0;
 }
 .card {
   display: block;
@@ -81,4 +81,8 @@
 }
 .move {
   padding: 0 0 0 35px;
+}
+.footer {
+  text-align: center;
+  font-size: 12px;
 }
