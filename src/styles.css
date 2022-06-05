@@ -27,7 +27,7 @@
   font-weight: bold;
   padding: 10px 0px 0px 45px;
   margin: 0;
-  max-width: 200px;
+  max-width: 300px;
 }
 .day {
   text-align: left;
@@ -42,15 +42,15 @@
   font-size: 45px;
   font-family: "DM Sans", sans-serif;
   font-weight: bold;
-  padding: 8px 0px 0px 45px;
+  padding: 12px 0px 10px 45px;
   margin: 0;
   max-width: 200px;
 }
-.averageTemperature {
+.wind {
   text-align: left;
-  font-size: 18px;
+  font-size: 15px;
   font-family: "DM Sans", sans-serif;
-  padding: 0px 0px 20px 60px;
+  padding: 0px 0px 20px 46px;
   font-style: italic;
   max-width: 200px;
 }

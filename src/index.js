@@ -52,12 +52,22 @@ let textForm = document.querySelector("#text-form");
 textForm.addEventListener("submit", enterCity);
 
 function showTemp(weather) {
-  console.log(weather.data.main.temp);
+  console.log(weather.data);
   let h1 = document.querySelector("#temp");
   let h2 = document.querySelector("h2");
-
+  let weatherIcon = document.querySelector(".weatherIcon");
+  let weatherDescription = document.querySelector(".weatherDescription");
+  let humidity = document.querySelector("#humidity");
+  let windSpeed = document.querySelector("#windSpeed");
   h1.innerHTML = `${Math.round(weather.data.main.temp)}`;
   h2.innerHTML = `${weather.data.name}`;
+  weatherIcon.innerHTML =
+    "<img src= http://openweathermap.org/img/wn/" +
+    weather.data.weather[0].icon +
+    "@2x.png></img>";
+  weatherDescription.innerHTML = `${weather.data.weather[0].main}`;
+  humidity.innerHTML = `${weather.data.main.humidity}`;
+  windSpeed.innerHTML = `${Math.round(weather.data.wind.speed * 3.6)}`;
 }
 function handlePosition(position) {
   let apiKey = "67a08e61017984c2bbf49beb981b5d89";
