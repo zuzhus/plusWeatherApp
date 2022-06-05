@@ -65,7 +65,7 @@ function showTemp(weather) {
     "<img src= https://openweathermap.org/img/wn/" +
     weather.data.weather[0].icon +
     "@2x.png></img>";
-  weatherDescription.innerHTML = `${weather.data.weather[0].main}`;
+  weatherDescription.innerHTML = `${weather.data.weather[0].description}`;
   humidity.innerHTML = `${weather.data.main.humidity}`;
   windSpeed.innerHTML = `${Math.round(weather.data.wind.speed * 3.6)}`;
 }
