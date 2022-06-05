@@ -62,7 +62,7 @@ function showTemp(weather) {
   h1.innerHTML = `${Math.round(weather.data.main.temp)}`;
   h2.innerHTML = `${weather.data.name}`;
   weatherIcon.innerHTML =
-    "<img src= http://openweathermap.org/img/wn/" +
+    "<img src= https://openweathermap.org/img/wn/" +
     weather.data.weather[0].icon +
     "@2x.png></img>";
   weatherDescription.innerHTML = `${weather.data.weather[0].main}`;
