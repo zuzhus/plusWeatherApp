@@ -1,5 +1,26 @@
 let now = new Date();
 let h4 = document.querySelector("h4");
+const icons = {
+  "01d": "☀️",
+  "02d": "⛅",
+  "03d": "☁️",
+  "04d": "🌥️",
+  "09d": "🌧️",
+  "10d": "⛅",
+  "11d": "🌧️",
+  "13d": "🌦️",
+  "50d": "⛈️",
+  "01n": "🌑",
+  "02n": "⛅",
+  "03n": "☁️",
+  "04n": "⛅",
+  "09n": "🌧️",
+  "10n": "⛅",
+  "11n": "🌧️",
+  "13n": "🌦️",
+  "50n": "⛈️",
+};
+
 let days = [
   "Sunday",
   "Monday",
@@ -9,6 +30,7 @@ let days = [
   "Friday",
   "Saturday",
 ];
+
 let day = days[now.getDay()];
 let months = [
   "January",
@@ -68,10 +90,7 @@ function showTemp(weather) {
 function searchCity(city) {
   let apiKey = "67a08e61017984c2bbf49beb981b5d89";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(`${apiUrl}`).then(showTemp);
-  let h2 = document.querySelector("h2");
-  h2.innerHTML = `${cityInput.value}`;
 }
 
 function showTemp(weather) {
@@ -85,11 +104,9 @@ function showTemp(weather) {
   let humidity = document.querySelector("#humidity");
   let windSpeed = document.querySelector("#windSpeed");
   h1.innerHTML = `${Math.round(weather.data.main.temp)}`;
-  h2.innerHTML = `${weather.data.name}`;
-  weatherIcon.innerHTML =
-    "<img src= https://openweathermap.org/img/wn/" +
-    weather.data.weather[0].icon +
-    "@2x.png></img>";
+  h2.innerHTML = `${weather.data.name}, ${weather.data.sys.country}`;
+  weatherIcon.innerHTML = icons[weather.data.weather[0].icon];
+
   weatherDescription.innerHTML = `${weather.data.weather[0].description}`;
   humidity.innerHTML = `${weather.data.main.humidity}`;
   windSpeed.innerHTML = `${Math.round(weather.data.wind.speed * 3.6)}`;
@@ -108,7 +125,6 @@ let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
 
 function showForecast(response) {
-  console.log(response.data);
   let forecastHTML = document.querySelector("#forecast");
   let forecast = `<ul class="list-group border-top-0">`;
 
@@ -119,10 +135,8 @@ function showForecast(response) {
         `<li class="list-group-item">
       <div class="row">
         <div class="col-5 move">${formatDay(weatherForecast.dt)}</div>
-        <div class="col">
-        <img src= https://openweathermap.org/img/wn/${
-          weatherForecast.weather[0].icon
-        }@2x.png height="30"></img>
+        <div class="col">${icons[weatherForecast.weather[0].icon]}
+        
     </div>
         <div class="col-3">
           <strong>${Math.round(
@@ -136,7 +150,6 @@ function showForecast(response) {
   forecast = forecast + `</ul>`;
   forecastHTML.innerHTML = forecast;
 }
-searchCity("Košice");
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -144,3 +157,5 @@ function formatDay(timestamp) {
 
   return days[day];
 }
+
+getCurrentPosition();
