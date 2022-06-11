@@ -32,22 +32,23 @@
         <div class="card-body">
           <div class="row">
             <div class="col">
-              <form id="text-form">
+              <form id="text-form" class="enterCityBtn">
                 <input
-                  size="10"
+                  size="12"
                   type="text"
-                  id="city-input"
+                  id="city-input"              
                   placeholder="✒️ Enter the city"
                 />
                 <input type="submit" value="🔎" />
               </form>
             </div>
 
-            <div class="col">
-              <button type="button" class="btn btn-dark">
+            <div class="col-4">
+              <button type="button" class="btn-dark">
                 Current location
               </button>
             </div>
+            
           </div>
         </div>
         <div class="row">
@@ -68,44 +69,8 @@
             <p class="weatherDescription">Partly cloudy</p>
           </div>
         </div>
-
-        <ul class="list-group border-top-0">
-          <li class="list-group-item">
-            <div class="row">
-              <div class="col-5 move">Tomorrow</div>
-              <div class="col">☀️</div>
-              <div class="col-4"><strong>11°</strong> / -1°</div>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <div class="row">
-              <div class="col-5 move">Tuesday</div>
-              <div class="col">⛅️</div>
-              <div class="col-4"><strong>14°</strong> / 5°</div>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <div class="row">
-              <div class="col-5 move">Wednesday</div>
-              <div class="col">☀️</div>
-              <div class="col-4"><strong>16°</strong> / 3°</div>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <div class="row">
-              <div class="col-5 move">Thursday</div>
-              <div class="col">⛅️</div>
-              <div class="col-4"><strong>17°</strong> / 7°</div>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <div class="row">
-              <div class="col-5 move">Friday</div>
-              <div class="col">☁️</div>
-              <div class="col-4"><strong>15°</strong> / 5°</div>
-            </div>
-          </li>
-        </ul>
+        <div id="forecast"></div>
+        
       </div>
     </div>
 

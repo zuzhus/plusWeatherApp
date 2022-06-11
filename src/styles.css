@@ -5,8 +5,8 @@
   display: block;
   margin: 0 auto;
 
-  width: 450px;
-  padding: px 0 15px 0;
+  width: 500px;
+  padding: 0 0 15px 0;
   border: 1px solid black;
 }
 .actual-weather-icon {
@@ -85,4 +85,8 @@
 .footer {
   text-align: center;
   font-size: 12px;
+}
+
+.enterCityBtn {
+  border: none;
 }
