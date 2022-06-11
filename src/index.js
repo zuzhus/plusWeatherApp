@@ -107,20 +107,6 @@ function getCurrentPosition() {
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
 
-function switchUnit() {
-  if (unit.innerHTML === "°F") {
-    unit.innerHTML = "°C";
-    temp.innerHTML = "15";
-  } else {
-    unit.innerHTML = "°F";
-    temp.innerHTML = 10 * 1.8 + 32;
-  }
-}
-let h1 = document.querySelector("h1");
-h1.addEventListener("click", switchUnit);
-let temp = document.querySelector("#temp");
-let unit = document.querySelector("#unit");
-
 function showForecast(response) {
   console.log(response.data);
   let forecastHTML = document.querySelector("#forecast");
@@ -138,7 +124,7 @@ function showForecast(response) {
           weatherForecast.weather[0].icon
         }@2x.png height="30"></img>
     </div>
-        <div class="col-4">
+        <div class="col-3">
           <strong>${Math.round(
             weatherForecast.temp.max
           )}°</strong> / ${Math.round(weatherForecast.temp.night)}°
