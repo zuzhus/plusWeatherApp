@@ -7,7 +7,7 @@
 
   width: 500px;
   padding: 0 0 15px 0;
-  border: 1px solid black;
+  border: 1px solid rgb(118, 118, 118);
 }
 .actual-weather-icon {
   display: block;
@@ -56,26 +56,26 @@
 }
 .currentTime {
   text-align: center;
-  font-size: 15px;
+  font-size: 17px;
   font-family: "DM Sans", sans-serif;
-  font-style: italic;
+  font-style: normal;
   max-width: 200px;
-  padding: 10px 0 0 5px;
+  padding: 22px 0 0 0px;
   margin: 0;
 }
 .weatherIcon {
   text-align: center;
   font-size: 70px;
   font-family: "DM Sans", sans-serif;
-  padding: 0px 0px 0px 5px;
+  padding: 0px 0px 0px 0px;
   margin: 0;
   max-width: 200px;
 }
 .weatherDescription {
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   font-family: "DM Sans", sans-serif;
-  padding: 0px 0px 0 5px;
+  padding: 0px 0px 0 0px;
   margin: 0;
   max-width: 200px;
 }
@@ -85,8 +85,16 @@
 .footer {
   text-align: center;
   font-size: 12px;
+  color: rgb (118, 118, 118);
 }
-
+.locationBtn {
+  background-color: rgb(239, 239, 239);
+  color: rgb(121, 119, 119);
+  border: 1px solid rgb(118, 118, 118);
+  border-radius: 2.5px;
+  padding: 2px 6px 2px 6px;
+  margin: 0 0 0 20px;
+}
 .enterCityBtn {
   border: none;
 }
