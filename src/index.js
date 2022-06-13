@@ -127,9 +127,13 @@ button.addEventListener("click", getCurrentPosition);
 function showForecast(response) {
   let forecastHTML = document.querySelector("#forecast");
   let forecast = `<ul class="list-group border-top-0">`;
-
+  let h3 = document.querySelector("h3");
+  console.log(response.data);
+  h3.innerHTML = `${Math.round(response.data.daily[0].temp.max)}°/ ${Math.round(
+    response.data.daily[0].temp.night
+  )}°`;
   response.data.daily.forEach(function (weatherForecast, index) {
-    if (index < 5) {
+    if (index < 6 && index > 0) {
       forecast =
         forecast +
         `<li class="list-group-item">
